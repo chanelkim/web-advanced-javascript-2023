@@ -1,0 +1,146 @@
+body {
+  /* font-family: Helvetica, sans-serif; */
+  font-family: Baskerville, serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  background-image: url("../media/rowan-heuvel-e-S-Pe2EmrE-unsplash.jpg");
+  background-size: cover;
+}
+
+p {
+  font-size: 12px;
+  text-align: center;
+}
+
+#title {
+  color: navy;
+  font-size: 30px;
+}
+
+#description {
+  /* color: navy; */
+  font-family: Helvetica, serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5em;
+  width: 80%;
+}
+
+#listTitle {
+  text-align: center;
+  color: navy;
+  font-size: 18px;
+  padding-top: 35px;
+  /* font-weight: 400; */
+}
+
+#speciesList {
+  color: black;
+  font-size: 16px;
+  /* font-weight: 400; */
+}
+
+header {
+  background-color: rgb(196, 238, 255, 0.4);
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+  color: black;
+}
+
+section {
+  width: 80%;
+  max-width: 780px;
+  margin: 0 auto;
+  /* border: 1px solid grey; */
+  background-color: #ffffff;
+  padding: 15px;
+}
+h1 {
+  /* text-align: center; */
+  color: darkgray;
+}
+ul {
+  display: flex;
+  align-items: stretch; /* Default */
+  width: 100%;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+}
+ul li {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  align-items: center;
+  flex: 1 1 auto;
+  text-align: center;
+}
+body ul li span:first-child {
+  font-family: arial;
+  font-size: 14px;
+  color: red;
+  text-align: center;
+}
+body ul li img {
+  margin: 5px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+p strong {
+  color: red;
+}
+
+.highlight {
+  color: green;
+  background-color: #505050;
+}
+
+span {
+  font-size: 21px;
+}
+.heading {
+  font-size: 30px;
+}
+
+h2 {
+  text-align: left;
+}
+form {
+  margin: 0 auto;
+}
+form input[type="text"],
+form input[type="password"],
+form input[type="number"] {
+  width: 60%;
+  padding: 10px;
+  /* border-radius: 10px; */
+}
+button {
+  padding: 8px;
+  width: 30%;
+  border: 4px double black;
+  border-radius: 7px;
+  /* background-color: navy */
+  text-align: center;
+  display: inline-block;
+  font-family: Helvetica, serif;
+  font-weight: 300;
+}
+button:hover {
+  background-color: navy;
+  color: white;
+}
+form label {
+  padding: 5px 0;
+  display: block;
+  margin-top: 15px;
+}
+form .error {
+  font-size: 80%;
+  color: darkred;
+}

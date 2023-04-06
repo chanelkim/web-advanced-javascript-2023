@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Midterm Project</title>
+    <meta name="description" content="Spring 2023 Class - Midterm" />
+    <meta name="author" content="Chanel" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header>eBird API</header>
+
+    <section>
+      <!-- this is a test h1 block -->
+      <h1 id="title">Birds Near You</h1>
+
+      <!-- this is a test form block -->
+      <h2 id="description">
+        <a href="https://ebird.org/about">eBird</a> is resource from The Cornell
+        Lab of Ornithology. The API provides user-submitted data documenting
+        bird distribution, abundance, habitat use, and trends. Discover the top
+        ten birds recently sighted (within the last 30 days) in your area with
+        this easy to use search tool.
+      </h2>
+
+      <form name="findSpecies" action="#" id="findSpecies">
+        <label for="locationInput">Enter location:</label>
+        <input type="text" id="locationInput" />
+        <button id="getSpeciesButton">Get Species</button>
+      </form>
+
+      <h1 id="listTitle">Top 10 Species</h1>
+      <ul>
+        <li id="speciesList"></li>
+      </ul>
+    </section>
+
+    <p>
+      Photo by
+      <a
+        href="https://unsplash.com/@insolitus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Rowan Heuvel</a
+      >
+      on
+      <a
+        href="https://unsplash.com/photos/e-S-Pe2EmrE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Unsplash</a
+      >
+    </p>
+
+    <!-- script always before closing body tag -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
