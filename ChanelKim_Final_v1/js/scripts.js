@@ -6,10 +6,31 @@ const NYC_OPENDATA_APP_TOKEN_PARKS = "xL2MGds4sPjYXCmShZhW8yZj0";
 
 /* code assistance from Midterm and using chatGPT 
 Data Sources: NYC Open Data and Mapbox
-Tennis Courts (Athletic Facilities API): https://dev.socrata.com/foundry/data.cityofnewyork.us/qnem-b8re
-Recreational Parks (Facilities API): https://dev.socrata.com/foundry/data.cityofnewyork.us/ji82-xba5
-Directory of Tennis Courts (JSON): https://data.cityofnewyork.us/Recreation/Directory-of-Tennis-Courts/dies-sqgi
-Zipcodes API (Mapbox Geocoding): https://docs.mapbox.com/api/search/geocoding/
+Tennis Courts - Apr 2023 (Athletic Facilities API): https://dev.socrata.com/foundry/data.cityofnewyork.us/qnem-b8re
+Recreational Parks - Aug 2022 (Facilities API): https://dev.socrata.com/foundry/data.cityofnewyork.us/ji82-xba5
+Directory of Tennis Courts - Sep 2018 (JSON): https://data.cityofnewyork.us/Recreation/Directory-of-Tennis-Courts/dies-sqgi
+Zipcodes (Mapbox Geocoding API): https://docs.mapbox.com/api/search/geocoding/
+*/
+
+/* ----- NEED HELP USING JSON AS DATA -----
+("use strict");
+
+// dependencies
+const fs = require("fs");
+
+// for json file
+fs.readFile("../json/DPR_Tennis_001.json", "utf-8", (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data);
+});
+function writeSuccess(err) {
+  if (err) console.error(err);
+  else console.log("write success");
+}
+fs.writeFile("../json/DPR_Tennis_001.json", "hello", writeSuccess);
 */
 
 // html elements
@@ -34,8 +55,13 @@ function getLocationZipcodeforTNS(locationName) {
           const zipcode = data.features[0].context.find((c) =>
             c.id.includes("postcode")
           ).text;
-          console.log(`For tennis at ${locationName}, zipcode: ${zipcode}`);
+          console.log(`For tennis API at ${locationName}, zipcode: ${zipcode}`);
           // if a zipcode is found...
+
+          /* // ----- FOR JSON DIRECTORY ------
+          const coordinates = data.features[0].center;
+          console.log(`${locationName} : ${coordinates}`);
+          // if coordinates are found... */
 
           // insert HTML element
           zip.innerHTML = ""; // clear previous list
@@ -43,8 +69,13 @@ function getLocationZipcodeforTNS(locationName) {
           h1Zip.textContent = `Your zipcode`;
           const li = document.createElement("li");
           li.textContent = `${zipcode}`;
+          // li.textContent = `${coordinates}`;
           zip.appendChild(h1Zip);
           zip.appendChild(li);
+
+          /* // ----- FOR JSON DIRECTORY ------ 
+          const jsonDirectory = url(`../json/DPR_Tennis_001.json`);
+          return fetch(jsonDirectory); */
 
           const urlTNS = `https://data.cityofnewyork.us/resource/qnem-b8re.json?$limit=5000&$where=zipcode='${zipcode}'&$$app_token=${NYC_OPENDATA_APP_TOKEN_TNS}`;
           // return fetched urlTNS back to the main function
@@ -54,6 +85,24 @@ function getLocationZipcodeforTNS(locationName) {
         }
       })
 
+      /* // ----- FOR JSON DIRECTORY ------
+        } else if (data.features.length > 0) {
+          const zipcode = data.features[0].context.find((c) =>
+            c.id.includes("postcode")
+          ).text;
+          console.log(`For tennis API at ${locationName}, zipcode: ${zipcode}`);
+          const urlTNS = `https://data.cityofnewyork.us/resource/qnem-b8re.json?$limit=5000&$where=zipcode='${zipcode}'&$$app_token=${NYC_OPENDATA_APP_TOKEN_TNS}`;
+          // return fetched urlTNS back to the main function
+          return fetch(urlTNS);
+          const coordinates = data.features[0].center;
+          console.log(`${locationName} : ${coordinates}`);
+          const jsonDirectory = url("../json/DPR_Tennis_001.json");
+          return fetch(jsonDirectory);
+        } else {
+          throw new Error(`No tennis courts found near ${locationName}`);
+        }
+      })*/
+
       // because previous .then fetched zipcode, can now get tennis court data
       .then((response) => response.json())
       .then((data) => {
@@ -62,6 +111,11 @@ function getLocationZipcodeforTNS(locationName) {
           (court) => court.primary_sport === "TNS"
         );
         console.log(tennisCourts);
+
+        /* // ----- FOR JSON DIRECTORY ------
+        const jsonDirectory = data;
+        console.log(`From tennis Directory: `);
+        console.log(jsonDirectory); */
 
         // insert HTML element
         courtList.innerHTML = ""; // clear previous list
@@ -129,7 +183,7 @@ function getLocationZipcodeforParks(locationName) {
           const zipcode = data.features[0].context.find((c) =>
             c.id.includes("postcode")
           ).text;
-          console.log(`For parks at ${locationName}, zipcode: ${zipcode}`);
+          console.log(`For parks API at ${locationName}, zipcode: ${zipcode}`);
           // if a zipcode is found...
 
           const urlParks = `https://data.cityofnewyork.us/resource/ji82-xba5.json?$limit=5000&$where=zipcode='${zipcode}'&$$app_token=${NYC_OPENDATA_APP_TOKEN_PARKS}`;
