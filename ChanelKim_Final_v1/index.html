@@ -15,19 +15,20 @@
     <header>Court Finder</header>
 
     <section>
-      <!-- this is a test h1 block -->
-      <h1 id="title">Tennis Courts Near You</h1>
-
-      <!-- this is a test form block -->
-      <h2 id="description">
+      <h1 id="title">Tennis Courts <br />Near You</h1>
+      <p id="description">
         Finding a public tennis court in New York City shouldn't be difficult.
-        While there are multiple online resources dedicated to listing where
-        tennis courts can be found, I haven't come across a single site that
-        provides a list according to your location. This tool seeks to help you
-        find NYC tennis courts easily. Enter any location within the five NYC
-        boroughs and the search will offer places to play based on the zipcode
-        associated with your input.
-      </h2>
+        Multiple resources online may list courts found throughout the city but
+        there's not a single source that locates them according to where you are
+        now.
+      </p>
+      <p id="description">
+        Court Finder was developed to make this possible. Enter any location
+        within the five boroughs and our search tool will serve you a list of
+        nearby courts. Alternate places for play are also provided, in case the
+        closest court is in a different zipcode.
+      </p>
+      <h2 id="cta">Get your sets in with Court Finder!</h2>
 
       <form name="findCourt" action="#" id="findCourt">
         <label for="locationInput">Enter location:</label>
@@ -35,18 +36,22 @@
         <button id="getCourts">Find Your Court</button>
       </form>
 
-      <h1 id="listTitle">Court List</h1>
-      <ul>
-        <li id="courtList"></li>
-      </ul>
-      <h1 id="h1Zip"></h1>
-      <ul>
-        <li id="zipcode"></li>
-      </ul>
-      <h1 id="h1Parks"></h1>
-      <ul>
-        <li id="parkList"></li>
-      </ul>
+      <div>
+        <h1 id="listTitle"></h1>
+        <ul>
+          <li id="zipcode"></li>
+        </ul>
+
+        <h1 id="listTitle">Court List</h1>
+        <ul class="list">
+          <li id="courtList"></li>
+        </ul>
+
+        <h1 id="listTitle"></h1>
+        <ul class="list">
+          <li id="parkList"></li>
+        </ul>
+      </div>
     </section>
 
     <p>

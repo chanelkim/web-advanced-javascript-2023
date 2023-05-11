@@ -1,6 +1,32 @@
+@font-face {
+  font-family: "RecoletaAlt";
+  src: url(../css/fonts/recoleta/RecoletaAlt-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RecoletaAlt";
+  src: url(../css/fonts/recoleta/RecoletaAlt-Bold.ttf) format("truetype");
+  font-weight: normal;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "RecoletaAlt";
+  src: url(../css/fonts/recoleta/RecoletaAlt-Medium.ttf) format("truetype");
+  font-weight: normal;
+  font-style: medium;
+}
+
 body {
-  /* font-family: Helvetica, sans-serif; */
-  font-family: Baskerville, serif;
+  color: #333333;
+  font-family: Helvetica, serif;
+  font-size: 18px;
+  font-weight: lighter;
+  font-kerning: auto;
+  letter-spacing: -0.04em;
+  width: 100%;
   background-color: #f0f0f0;
   margin: 0;
   /* background-image: url("../media/angela-bailey-pSr9S6po7Ps-unsplash.jpg"); */
@@ -10,44 +36,69 @@ body {
 
 p {
   font-size: 12px;
+  line-height: 0.7em;
   /* text-align: center; */
   /* margin-bottom: 20px; */
 }
 
+section {
+  align-items: center;
+  padding: 40px;
+}
+
+div {
+  padding: 40px;
+}
+
 #title {
-  color: navy;
-  font-size: 30px;
+  color: darkolivegreen;
+  font-family: "RecoletaAlt";
+  font-size: 60px;
+  line-height: 1em;
+  text-align: center;
 }
 
 #description {
-  /* color: navy; */
   font-family: Helvetica, serif;
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: auto;
   line-height: 1.5em;
+  font-kerning: auto;
   width: 80%;
+  text-align: center;
+  margin-left: 40px;
+}
+
+#zipcode {
+  color: #333333;
+  font-family: "RecoletaAlt";
+  font-size: 22px;
 }
 
 #listTitle {
-  /* text-align: center; */
-  color: navy;
-  font-size: 18px;
-  padding-top: 35px;
-  /* font-weight: 400; */
+  font-family: "RecoletaAlt";
+  font-size: 22px;
 }
 
-#speciesList {
-  color: black;
-  font-size: 16px;
-  /* font-weight: 400; */
+#courtList {
+  color: darkolivegreen;
+  font-family: "RecoletaAlt";
+  /* margin-bottom: 5px; */
+}
+
+#parkList {
+  color: #333333;
+  font-family: "RecoletaAlt";
+  font-size: 22px;
 }
 
 header {
+  align-items: stretch;
   background-color: rgb(196, 238, 255, 0.4);
   padding: 10px;
   margin-bottom: 20px;
   text-align: right;
-  color: black;
+  color: white;
 }
 
 section {
@@ -60,14 +111,31 @@ section {
 }
 h1 {
   /* text-align: center; */
+  font-family: "RecoletaAlt";
+  font-size: 22px;
   color: darkgray;
+  /* margin-bottom: 20px; */
 }
+
+h2 {
+  text-align: left;
+  font-size: medium;
+  color: darkolivegreen;
+  font-size: 22px;
+  margin-top:20px
+  /* margin-left: 40px; */
+}
+#cta {
+  /* margin-left: 40px */
+text-align: center;
+}
+
 li {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 500;
 }
 ul {
-  display: flex;
+  /* display: flex; */
   /* align-items: stretch; */
   width: 100%;
   list-style: none;
@@ -75,27 +143,22 @@ ul {
   /* align-items: flex-start; */
   /* justify-content: left; */
   padding: 0;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 ul li {
-  /* margin-bottom: 5px; */
+  /* margin-bottom: 30px; */
   /* margin-left: 20px; */
   margin-right: 20px;
   align-items: left;
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
   text-align: left;
 }
-body ul li span:first-child {
-  font-family: arial;
-  font-size: 14px;
-  color: red;
-  text-align: center;
-}
-body ul li img {
-  margin: 5px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  display: block;
+
+.list {
+  color: darkolivegreen;
+  font-family: "RecoletaAlt";
+  font-size: 16px;
+  margin-left: 40px;
 }
 
 p strong {
@@ -114,13 +177,16 @@ span {
   font-size: 30px;
 }
 
-h2 {
-  text-align: left;
-}
 form {
-  margin: 0 auto;
+  margin-left: 40px;
 }
-form input[type="text"],
+form input[type="text"] {
+  font-family: "RecoletaAlt";
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+}
+,
 form input[type="password"],
 form input[type="number"] {
   width: 60%;
@@ -128,20 +194,26 @@ form input[type="number"] {
   /* border-radius: 10px; */
 }
 button {
-  padding: 8px;
+  font-family: "RecoletaAlt";
+  padding: 12px;
   width: 30%;
-  border: 4px double black;
+  border: 1px
   border-radius: 7px;
-  /* background-color: navy */
   text-align: center;
   display: inline-block;
-  font-family: Helvetica, serif;
+  /* font-family: Helvetica, serif; */
   font-weight: 300;
 }
+
 button:hover {
-  background-color: navy;
-  color: white;
+  background-color: darkolivegreen;
+  padding: 10px;
+  width: 30%;
+  border: 1px;
+  border-radius: 7px;
+  color: whitesmoke
 }
+
 form label {
   padding: 5px 0;
   display: block;

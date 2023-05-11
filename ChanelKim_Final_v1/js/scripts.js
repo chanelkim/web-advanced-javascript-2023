@@ -65,12 +65,12 @@ function getLocationZipcodeforTNS(locationName) {
 
           // insert HTML element
           zip.innerHTML = ""; // clear previous list
-          const h1Zip = document.createElement("h1");
-          h1Zip.textContent = `Your zipcode`;
+          const listTitle = document.createElement("h1");
+          listTitle.textContent = `Your zipcode`;
           const li = document.createElement("li");
           li.textContent = `${zipcode}`;
           // li.textContent = `${coordinates}`;
-          zip.appendChild(h1Zip);
+          zip.appendChild(listTitle);
           zip.appendChild(li);
 
           /* // ----- FOR JSON DIRECTORY ------ 
@@ -144,26 +144,16 @@ function getLocationZipcodeforTNS(locationName) {
             const type = court.surface_type;
             const permit = court.tennis;
             const zipcode = court.zipcode;
-            // const li = document.createElement("li");
-            // li.textContent = `${tennisCourts.length} courts found`;
-            // courtList.appendChild(li);
-
             // create html format
             const listItemHtml = `
-        <li>
+          <h2>${systemId} (${zipcode})</h2>
           <ul>
-          ${systemId} (${zipcode}) - Permit Requirement: ${permit}
-          </ul>
-          <ul>
+            <li>Permit Requirement: ${permit}</li>
             <li>Accessible: ${accessible}</li>
             <li>Surface Type: ${type}</li>
-            <li>Court Maintenance: ${maintenance}</li>
-          <br>
             <li>Community Board: ${communityBoard}</li>
             <li>Council District: ${councilDistrict}</li>
-          </ul>
-        </li>
-      `;
+          </ul>`;
             courtList.insertAdjacentHTML("beforeend", listItemHtml);
           });
         } else {
@@ -212,22 +202,24 @@ function getLocationZipcodeforParks(locationName) {
         // insert HTML element
         parkList.innerHTML = ""; // clear previous list
         if (nearbyParks.length > 0) {
-          const h1Parks = document.createElement("h1");
-          h1Parks.textContent = `Parks & Playgrounds`;
-          parkList.append(h1Parks);
+          const listTitle = document.createElement("h1");
+          listTitle.textContent = `Parks & Playgrounds`;
+          parkList.append(listTitle);
           // lists count of parks found
           const li = document.createElement("li");
-          li.textContent = `${nearbyParks.length} places that might offer other ways to practice`;
+          li.textContent = `${nearbyParks.length} alternatives`;
           parkList.appendChild(li);
           // data pulled from API
           nearbyParks.forEach((park) => {
             const parkName = park.facname;
+            const parkType = park.factype;
             const parkAddress = park.address;
             const parkZipcode = park.zipcode;
+            const parkOp = park.optype;
             const parkCD = park.council;
             const parkCT = park.censtract;
             const li = document.createElement("li");
-            li.textContent = `${parkName} - ${parkAddress} - Community District: ${parkCD}, Census Tract: ${parkCT}`;
+            li.textContent = `${parkName} - ${parkType} - ${parkOp} - ${parkAddress} - Community District: ${parkCD}, Census Tract: ${parkCT}`;
             parkList.appendChild(li);
           });
         } else {
