@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Final Project</title>
+    <meta name="description" content="Spring 2023 Class - Final" />
+    <meta name="author" content="Chanel" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header>Court Finder</header>
+
+    <section>
+      <!-- this is a test h1 block -->
+      <h1 id="title">Tennis Courts Near You</h1>
+
+      <!-- this is a test form block -->
+      <h2 id="description">
+        Finding a public tennis court in New York City shouldn't be difficult.
+        While there are multiple online resources dedicated to listing where
+        tennis courts can be found, I haven't come across a single site that
+        provides a list according to your location. This tool seeks to help you
+        find NYC tennis courts easily. Enter any location within the five NYC
+        boroughs and the search will offer places to play based on the zipcode
+        associated with your input.
+      </h2>
+
+      <form name="findCourt" action="#" id="findCourt">
+        <label for="locationInput">Enter location:</label>
+        <input type="text" id="locationInput" />
+        <button id="getCourts">Find Your Court</button>
+      </form>
+
+      <h1 id="listTitle">Court List</h1>
+      <ul>
+        <li id="courtList"></li>
+      </ul>
+      <h1 id="h1Zip"></h1>
+      <ul>
+        <li id="zipcode"></li>
+      </ul>
+      <h1 id="h1Parks"></h1>
+      <ul>
+        <li id="parkList"></li>
+      </ul>
+    </section>
+
+    <p>
+      Photo by
+      <a
+        href="https://unsplash.com/@dricciardi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Dean Ricciardi</a
+      >
+      on
+      <a
+        href="https://unsplash.com/s/photos/tennis-court?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Unsplash</a
+      >
+    </p>
+    <!-- <p>
+      Photo by
+      <a
+        href="https://unsplash.com/@angelabaileyy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Angela Bailey</a
+      >
+      on
+      <a
+        href="https://unsplash.com/s/photos/tennis-court?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+        >Unsplash</a
+      >
+    </p> -->
+    <!-- script always before closing body tag -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
