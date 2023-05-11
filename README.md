@@ -16,3 +16,9 @@ Class assignments for <a href="https://github.com/kujain/S23-5505_Javascript">S2
 
 #### Assignment 5 
 <p>DOM Manipulation</p>
+
+#### Midterm
+<p>Bird Finder</p>
+
+#### Final
+<p>Tennis Court Finder</p>
