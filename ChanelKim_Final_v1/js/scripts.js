@@ -119,7 +119,13 @@ function getLocationZipcodeforTNS(locationName) {
 
         // insert HTML element
         courtList.innerHTML = ""; // clear previous list
+
         if (tennisCourts.length > 0) {
+          // lists count of tennis courts found
+          const li = document.createElement("li");
+          li.textContent = `${tennisCourts.length} courts found`;
+          courtList.appendChild(li);
+          // data pulled from API
           tennisCourts.forEach((court) => {
             const primarySport = court.primary_sport;
             const accessible = court.accessible;
@@ -138,9 +144,9 @@ function getLocationZipcodeforTNS(locationName) {
             const type = court.surface_type;
             const permit = court.tennis;
             const zipcode = court.zipcode;
-            const li = document.createElement("li");
-            li.textContent = `${tennisCourts.length} courts found`;
-            courtList.appendChild(li);
+            // const li = document.createElement("li");
+            // li.textContent = `${tennisCourts.length} courts found`;
+            // courtList.appendChild(li);
 
             // create html format
             const listItemHtml = `
@@ -208,10 +214,12 @@ function getLocationZipcodeforParks(locationName) {
         if (nearbyParks.length > 0) {
           const h1Parks = document.createElement("h1");
           h1Parks.textContent = `Parks & Playgrounds`;
+          parkList.append(h1Parks);
+          // lists count of parks found
           const li = document.createElement("li");
           li.textContent = `${nearbyParks.length} places that might offer other ways to practice`;
-          parkList.append(h1Parks);
           parkList.appendChild(li);
+          // data pulled from API
           nearbyParks.forEach((park) => {
             const parkName = park.facname;
             const parkAddress = park.address;
