@@ -19,7 +19,7 @@ Zipcodes (Mapbox Geocoding API): https://docs.mapbox.com/api/search/geocoding/
 const fs = require("fs");
 
 // for json file
-fs.readFile("../json/DPR_Tennis_001.json", "utf-8", (err, data) => {
+fs.readFile("../src/json/DPR_Tennis_001.json", "utf-8", (err, data) => {
   if (err) {
     console.error(err);
     return;
@@ -30,7 +30,7 @@ function writeSuccess(err) {
   if (err) console.error(err);
   else console.log("write success");
 }
-fs.writeFile("../json/DPR_Tennis_001.json", "hello", writeSuccess);
+fs.writeFile("../src/json/DPR_Tennis_001.json", "hello", writeSuccess);
 */
 
 // html elements
@@ -74,7 +74,7 @@ function getLocationZipcodeforTNS(locationName) {
           zip.appendChild(li);
 
           /* // ----- FOR JSON DIRECTORY ------ 
-          const jsonDirectory = url(`../json/DPR_Tennis_001.json`);
+          const jsonDirectory = url(`../src/json/DPR_Tennis_001.json`);
           return fetch(jsonDirectory); */
 
           const urlTNS = `https://data.cityofnewyork.us/resource/qnem-b8re.json?$limit=5000&$where=zipcode='${zipcode}'&$$app_token=${NYC_OPENDATA_APP_TOKEN_TNS}`;
@@ -96,7 +96,7 @@ function getLocationZipcodeforTNS(locationName) {
           return fetch(urlTNS);
           const coordinates = data.features[0].center;
           console.log(`${locationName} : ${coordinates}`);
-          const jsonDirectory = url("../json/DPR_Tennis_001.json");
+          const jsonDirectory = url("../src/json/DPR_Tennis_001.json");
           return fetch(jsonDirectory);
         } else {
           throw new Error(`No tennis courts found near ${locationName}`);
