@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "RecoletaAlt";
+  src: url(../src/css/fonts/recoleta/RecoletaAlt-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RecoletaAlt";
+  src: url(../src/css/fonts/recoleta/RecoletaAlt-Bold.ttf) format("truetype");
+  font-weight: normal;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "RecoletaAlt";
+  src: url(../src/css/fonts/recoleta/RecoletaAlt-Medium.ttf) format("truetype");
+  font-weight: normal;
+  font-style: medium;
+}
+
+body {
+  color: #333333;
+  font-family: Helvetica, serif;
+  font-size: 18px;
+  font-weight: lighter;
+  font-kerning: auto;
+  letter-spacing: -0.04em;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 0;
+  /* background-image: url("../media/angela-bailey-pSr9S6po7Ps-unsplash.jpg"); */
+  background-image: url("/src/media/dean-ricciardi-h_APjtUNJv0-unsplash.jpg");
+  background-size: cover;
+}
+
+p {
+  font-size: 12px;
+  line-height: 0.7em;
+  /* text-align: center; */
+  /* margin-bottom: 20px; */
+}
+
+section {
+  align-items: center;
+  padding: 40px;
+}
+
+div {
+  padding: 40px;
+}
+
+#title {
+  color: darkolivegreen;
+  font-family: "RecoletaAlt";
+  font-size: 60px;
+  line-height: 1em;
+  text-align: center;
+}
+
+#description {
+  font-family: Helvetica, serif;
+  font-size: 18px;
+  font-weight: auto;
+  line-height: 1.5em;
+  font-kerning: auto;
+  width: 80%;
+  text-align: center;
+  margin-left: 40px;
+}
+
+#zipcode {
+  color: #333333;
+  font-family: "RecoletaAlt";
+  font-size: 22px;
+}
+
+#listTitle {
+  font-family: "RecoletaAlt";
+  font-size: 22px;
+}
+
+#courtList {
+  color: darkolivegreen;
+  font-family: "RecoletaAlt";
+  /* margin-bottom: 5px; */
+}
+
+#parkList {
+  color: #333333;
+  font-family: "RecoletaAlt";
+  font-size: 22px;
+}
+
+#attribution {
+  color: white;
+  text-align: center;
+}
+#attribution a {
+  color: white;
+  text-align: center;
+}
+
+header {
+  align-items: stretch;
+  background-color: rgb(196, 238, 255, 0.4);
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: right;
+  color: white;
+}
+
+section {
+  width: 80%;
+  max-width: 780px;
+  margin: 0 auto;
+  /* border: 1px solid grey; */
+  background-color: #ffffff;
+  padding: 15px;
+}
+h1 {
+  /* text-align: center; */
+  font-family: "RecoletaAlt";
+  font-size: 22px;
+  color: darkgray;
+  /* margin-bottom: 20px; */
+}
+
+h2 {
+  text-align: left;
+  font-size: medium;
+  color: darkolivegreen;
+  font-size: 22px;
+  margin-top:20px
+  /* margin-left: 40px; */
+}
+#cta {
+  /* margin-left: 40px */
+text-align: center;
+}
+
+li {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+ul {
+  /* display: flex; */
+  /* align-items: stretch; */
+  width: 100%;
+  list-style: none;
+  /* flex-wrap: wrap; */
+  /* align-items: flex-start; */
+  /* justify-content: left; */
+  padding: 0;
+  margin-bottom: 20px;
+}
+ul li {
+  /* margin-bottom: 30px; */
+  /* margin-left: 20px; */
+  margin-right: 20px;
+  align-items: left;
+  /* flex: 1 1 auto; */
+  text-align: left;
+}
+
+.list {
+  color: darkolivegreen;
+  font-family: "RecoletaAlt";
+  font-size: 16px;
+  margin-left: 40px;
+}
+
+p strong {
+  color: red;
+}
+
+.highlight {
+  color: green;
+  background-color: #505050;
+}
+
+span {
+  font-size: 21px;
+}
+.heading {
+  font-size: 30px;
+}
+
+form {
+  margin-left: 40px;
+}
+form input[type="text"] {
+  font-family: "RecoletaAlt";
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+}
+,
+form input[type="password"],
+form input[type="number"] {
+  width: 60%;
+  padding: 10px;
+  /* border-radius: 10px; */
+}
+button {
+  font-family: "RecoletaAlt";
+  padding: 12px;
+  width: 30%;
+  border: 1px
+  border-radius: 7px;
+  text-align: center;
+  display: inline-block;
+  /* font-family: Helvetica, serif; */
+  font-weight: 300;
+}
+
+button:hover {
+  background-color: darkolivegreen;
+  padding: 10px;
+  width: 30%;
+  border: 1px;
+  border-radius: 7px;
+  color: whitesmoke
+}
+
+form label {
+  padding: 5px 0;
+  display: block;
+  margin-top: 15px;
+}
+form .error {
+  font-size: 80%;
+  color: darkred;
+}
